@@ -34,7 +34,9 @@
       this.label2 = new System.Windows.Forms.Label();
       this.powerNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.simulationProgressBar = new System.Windows.Forms.ProgressBar();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // startButton
@@ -92,11 +94,20 @@
       this.simulationProgressBar.Size = new System.Drawing.Size(301, 23);
       this.simulationProgressBar.TabIndex = 4;
       // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Location = new System.Drawing.Point(13, 101);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(698, 521);
+      this.pictureBox1.TabIndex = 5;
+      this.pictureBox1.TabStop = false;
+      // 
       // DisplayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(681, 493);
+      this.ClientSize = new System.Drawing.Size(723, 634);
+      this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.simulationProgressBar);
       this.Controls.Add(this.powerNumericUpDown);
       this.Controls.Add(this.label2);
@@ -106,6 +117,7 @@
       this.Name = "DisplayForm";
       this.Text = "Form1";
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown powerNumericUpDown;
         private System.Windows.Forms.ProgressBar simulationProgressBar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

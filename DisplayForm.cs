@@ -57,7 +57,18 @@ namespace HexPiles
 
     private void simulationBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
     {
+      HexGridRenderer HGR = new HexGridRenderer(pictureBox1.Width, pictureBox1.Height, 4);
+      Palette P = new Palette(6);
+      P.SetColor(0, Color.FromArgb(255,0,0));
+      P.SetColor(1, Color.FromArgb(255, 255, 0));
+      P.SetColor(2, Color.FromArgb(0, 255, 0));
+      P.SetColor(3, Color.FromArgb(0, 255, 255));
+      P.SetColor(4, Color.FromArgb(0, 0, 255));
+      P.SetColor(5, Color.FromArgb(255, 0, 255));
 
+      Bitmap B = HGR.RenderHexGrid(P, e.Result as Dictionary<HexCoordinate, ulong>);
+
+      pictureBox1.Image = B;
     }
   }
 }

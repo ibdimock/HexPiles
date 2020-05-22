@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HexGridRenderer.cs" />
+    <Compile Include="Palette.cs" />
     <Compile Include="Simulator.cs" />
     <Compile Include="DisplayForm.cs">
       <SubType>Form</SubType>

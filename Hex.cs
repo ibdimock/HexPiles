@@ -30,7 +30,7 @@ namespace HexPiles
 */
 
   [DebuggerDisplay("(<{X},{Y},{Z}>")]
-  public class HexCoordinate
+  public struct HexCoordinate
   {
     internal int X;
     internal int Y;
