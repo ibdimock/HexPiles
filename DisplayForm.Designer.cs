@@ -35,8 +35,22 @@
       this.powerNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.simulationProgressBar = new System.Windows.Forms.ProgressBar();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.iterationsLabel = new System.Windows.Forms.Label();
+      this.renderButton = new System.Windows.Forms.Button();
+      this.palette0PictureBox = new System.Windows.Forms.PictureBox();
+      this.palette1PictureBox = new System.Windows.Forms.PictureBox();
+      this.palette2PictureBox = new System.Windows.Forms.PictureBox();
+      this.palette3PictureBox = new System.Windows.Forms.PictureBox();
+      this.palette4PictureBox = new System.Windows.Forms.PictureBox();
+      this.palette5PictureBox = new System.Windows.Forms.PictureBox();
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette0PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette1PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette2PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette3PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette4PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette5PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
       // startButton
@@ -102,11 +116,86 @@
       this.pictureBox1.TabIndex = 5;
       this.pictureBox1.TabStop = false;
       // 
+      // iterationsLabel
+      // 
+      this.iterationsLabel.AutoSize = true;
+      this.iterationsLabel.Location = new System.Drawing.Point(272, 18);
+      this.iterationsLabel.Name = "iterationsLabel";
+      this.iterationsLabel.Size = new System.Drawing.Size(70, 15);
+      this.iterationsLabel.TabIndex = 6;
+      this.iterationsLabel.Text = "Iterations: 0";
+      // 
+      // renderButton
+      // 
+      this.renderButton.Location = new System.Drawing.Point(452, 53);
+      this.renderButton.Name = "renderButton";
+      this.renderButton.Size = new System.Drawing.Size(80, 23);
+      this.renderButton.TabIndex = 7;
+      this.renderButton.Text = "Render";
+      this.renderButton.UseVisualStyleBackColor = true;
+      this.renderButton.Click += new System.EventHandler(this.renderButton_Click);
+      // 
+      // palette0PictureBox
+      // 
+      this.palette0PictureBox.Location = new System.Drawing.Point(452, 9);
+      this.palette0PictureBox.Name = "palette0PictureBox";
+      this.palette0PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette0PictureBox.TabIndex = 8;
+      this.palette0PictureBox.TabStop = false;
+      // 
+      // palette1PictureBox
+      // 
+      this.palette1PictureBox.Location = new System.Drawing.Point(498, 9);
+      this.palette1PictureBox.Name = "palette1PictureBox";
+      this.palette1PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette1PictureBox.TabIndex = 9;
+      this.palette1PictureBox.TabStop = false;
+      // 
+      // palette2PictureBox
+      // 
+      this.palette2PictureBox.Location = new System.Drawing.Point(544, 9);
+      this.palette2PictureBox.Name = "palette2PictureBox";
+      this.palette2PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette2PictureBox.TabIndex = 10;
+      this.palette2PictureBox.TabStop = false;
+      // 
+      // palette3PictureBox
+      // 
+      this.palette3PictureBox.Location = new System.Drawing.Point(590, 9);
+      this.palette3PictureBox.Name = "palette3PictureBox";
+      this.palette3PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette3PictureBox.TabIndex = 11;
+      this.palette3PictureBox.TabStop = false;
+      // 
+      // palette4PictureBox
+      // 
+      this.palette4PictureBox.Location = new System.Drawing.Point(636, 9);
+      this.palette4PictureBox.Name = "palette4PictureBox";
+      this.palette4PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette4PictureBox.TabIndex = 12;
+      this.palette4PictureBox.TabStop = false;
+      // 
+      // palette5PictureBox
+      // 
+      this.palette5PictureBox.Location = new System.Drawing.Point(682, 9);
+      this.palette5PictureBox.Name = "palette5PictureBox";
+      this.palette5PictureBox.Size = new System.Drawing.Size(40, 34);
+      this.palette5PictureBox.TabIndex = 13;
+      this.palette5PictureBox.TabStop = false;
+      // 
       // DisplayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(723, 634);
+      this.Controls.Add(this.palette5PictureBox);
+      this.Controls.Add(this.palette4PictureBox);
+      this.Controls.Add(this.palette3PictureBox);
+      this.Controls.Add(this.palette2PictureBox);
+      this.Controls.Add(this.palette1PictureBox);
+      this.Controls.Add(this.palette0PictureBox);
+      this.Controls.Add(this.renderButton);
+      this.Controls.Add(this.iterationsLabel);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.simulationProgressBar);
       this.Controls.Add(this.powerNumericUpDown);
@@ -118,6 +207,12 @@
       this.Text = "Form1";
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette0PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette1PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette2PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette3PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette4PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.palette5PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -132,6 +227,14 @@
         private System.Windows.Forms.NumericUpDown powerNumericUpDown;
         private System.Windows.Forms.ProgressBar simulationProgressBar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label iterationsLabel;
+        private System.Windows.Forms.Button renderButton;
+        private System.Windows.Forms.PictureBox palette0PictureBox;
+        private System.Windows.Forms.PictureBox palette1PictureBox;
+        private System.Windows.Forms.PictureBox palette2PictureBox;
+        private System.Windows.Forms.PictureBox palette3PictureBox;
+        private System.Windows.Forms.PictureBox palette4PictureBox;
+        private System.Windows.Forms.PictureBox palette5PictureBox;
     }
 }
 

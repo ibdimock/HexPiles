@@ -43,6 +43,23 @@ namespace HexPiles
       this.Z = -(X + Y);
     }
 
+    public override bool Equals(object obj)
+    {
+      return obj is HexCoordinate coordinate &&
+             X == coordinate.X &&
+             Y == coordinate.Y &&
+             Z == coordinate.Z;
+    }
+
+    public override int GetHashCode()
+    {
+      var hashCode = -307843816;
+      hashCode = hashCode * -1521134295 + X.GetHashCode();
+      hashCode = hashCode * -1521134295 + Y.GetHashCode();
+      hashCode = hashCode * -1521134295 + Z.GetHashCode();
+      return hashCode;
+    }
+
     public HexCoordinate[] GetNeighbours()
     {
       return new HexCoordinate[6]

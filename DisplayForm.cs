@@ -12,11 +12,47 @@ namespace HexPiles
 {
   public partial class DisplayForm : Form
   {
+    PictureBox[] palettePictureBoxes;
+    Palette P;
+
     public DisplayForm()
     {
       InitializeComponent();
+
+      P = new Palette(6);
+      P.SetColor(0, Color.FromArgb(0, 0, 0));
+      P.SetColor(1, Color.FromArgb(42, 43, 42));
+      P.SetColor(2, Color.FromArgb(94, 73, 85));
+      P.SetColor(3, Color.FromArgb(153, 104, 136));
+      P.SetColor(4, Color.FromArgb(201, 157, 163));
+      P.SetColor(5, Color.FromArgb(198, 221, 240));
+
+      palettePictureBoxes = new PictureBox[6]
+      {
+        palette0PictureBox,
+        palette1PictureBox,
+        palette2PictureBox,
+        palette3PictureBox,
+        palette4PictureBox,
+        palette5PictureBox
+      };
+
+      for (int i = 0; i < 6; i++)
+      {
+        RenderPaletteHex(P, i, palettePictureBoxes[i]);
+      }
     }
 
+    void RenderPaletteHex(Palette P, int i, PictureBox pictureBox)
+    {
+      HexGridRenderer HGR = new HexGridRenderer(pictureBox.Width, pictureBox.Height, 0.5f * pictureBox.Width);
+      Dictionary<HexCoordinate, ulong> Cell = new Dictionary<HexCoordinate, ulong>();
+      Cell.Add(new HexCoordinate(0, 0), (ulong)i);
+      Bitmap B = HGR.RenderHexGrid(P, Cell);
+      pictureBox.Image = B;
+    }
+
+    int iterations = 0;
     private void simulationBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
     {
       ulong StartingSand = (ulong)e.Argument;
@@ -28,8 +64,11 @@ namespace HexPiles
 
       CurrentState.Add(new HexCoordinate(0, 0), StartingSand);
 
+      iterations = 0;
+
       while (Simulator.DoIteration(CurrentState, NextState))
       {
+        iterations++;
         CurrentState = NextState;
 
         int currentProgress = (int)(100 * ((ulong)CurrentState.Count()) / estimatedCellCount);
@@ -47,6 +86,7 @@ namespace HexPiles
     private void simulationBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
     {
       simulationProgressBar.Value = e.ProgressPercentage;
+      iterationsLabel.Text = String.Format("Iterations: {0}", iterations);
     }
 
     private void startButton_Click(object sender, EventArgs e)
@@ -55,18 +95,28 @@ namespace HexPiles
       simulationBackgroundWorker.RunWorkerAsync(StartingSand);
     }
 
+    Dictionary<HexCoordinate, ulong> LastSimulationResult;
+
     private void simulationBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
     {
-      HexGridRenderer HGR = new HexGridRenderer(pictureBox1.Width, pictureBox1.Height, 4);
-      Palette P = new Palette(6);
-      P.SetColor(0, Color.FromArgb(255,0,0));
-      P.SetColor(1, Color.FromArgb(255, 255, 0));
-      P.SetColor(2, Color.FromArgb(0, 255, 0));
-      P.SetColor(3, Color.FromArgb(0, 255, 255));
-      P.SetColor(4, Color.FromArgb(0, 0, 255));
-      P.SetColor(5, Color.FromArgb(255, 0, 255));
 
-      Bitmap B = HGR.RenderHexGrid(P, e.Result as Dictionary<HexCoordinate, ulong>);
+      LastSimulationResult = e.Result as Dictionary<HexCoordinate, ulong>;
+
+      Render();
+
+    }
+
+    private void renderButton_Click(object sender, EventArgs e)
+    {
+      Render();
+    }
+
+    private void Render()
+    {
+      HexGridRenderer HGR = new HexGridRenderer(pictureBox1.Width, pictureBox1.Height, 4);
+    
+
+      Bitmap B = HGR.RenderHexGrid(P, LastSimulationResult as Dictionary<HexCoordinate, ulong>);
 
       pictureBox1.Image = B;
     }

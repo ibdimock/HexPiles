@@ -37,7 +37,7 @@ namespace HexPiles
           using (Brush B = new SolidBrush(P.GetColor((int)cell.Value)))
           {
             gfx.FillPolygon(B, BoundaryPoints(cell.Key));
-            gfx.DrawPolygon(Pens.Black, BoundaryPoints(cell.Key));
+            //gfx.DrawPolygon(Pens.Black, BoundaryPoints(cell.Key));
           }
         }
       }
