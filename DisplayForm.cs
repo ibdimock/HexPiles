@@ -113,7 +113,7 @@ namespace HexPiles
 
     private void Render()
     {
-      HexGridRenderer HGR = new HexGridRenderer(pictureBox1.Width, pictureBox1.Height, 4);
+      HexGridRenderer HGR = new HexGridRenderer(pictureBox1.Width, pictureBox1.Height, (float)scaleNumericUpDown.Value);
     
 
       Bitmap B = HGR.RenderHexGrid(P, LastSimulationResult as Dictionary<HexCoordinate, ulong>);

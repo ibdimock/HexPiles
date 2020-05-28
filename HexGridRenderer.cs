@@ -32,6 +32,9 @@ namespace HexPiles
       {
         gfx.FillRectangle(Brushes.Black, 0, 0, imageWidth, imageHeight);
 
+        gfx.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+        //gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
         foreach (KeyValuePair<HexCoordinate, ulong> cell in GridState)
         {
           using (Brush B = new SolidBrush(P.GetColor((int)cell.Value)))

@@ -43,6 +43,8 @@
       this.palette3PictureBox = new System.Windows.Forms.PictureBox();
       this.palette4PictureBox = new System.Windows.Forms.PictureBox();
       this.palette5PictureBox = new System.Windows.Forms.PictureBox();
+      this.scaleNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.label3 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette0PictureBox)).BeginInit();
@@ -51,6 +53,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.palette3PictureBox)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette4PictureBox)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette5PictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.scaleNumericUpDown)).BeginInit();
       this.SuspendLayout();
       // 
       // startButton
@@ -127,7 +130,7 @@
       // 
       // renderButton
       // 
-      this.renderButton.Location = new System.Drawing.Point(452, 53);
+      this.renderButton.Location = new System.Drawing.Point(553, 53);
       this.renderButton.Name = "renderButton";
       this.renderButton.Size = new System.Drawing.Size(80, 23);
       this.renderButton.TabIndex = 7;
@@ -183,11 +186,50 @@
       this.palette5PictureBox.TabIndex = 13;
       this.palette5PictureBox.TabStop = false;
       // 
+      // scaleNumericUpDown
+      // 
+      this.scaleNumericUpDown.DecimalPlaces = 1;
+      this.scaleNumericUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+      this.scaleNumericUpDown.Location = new System.Drawing.Point(498, 55);
+      this.scaleNumericUpDown.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+      this.scaleNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.scaleNumericUpDown.Name = "scaleNumericUpDown";
+      this.scaleNumericUpDown.Size = new System.Drawing.Size(49, 21);
+      this.scaleNumericUpDown.TabIndex = 14;
+      this.scaleNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(451, 57);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(41, 15);
+      this.label3.TabIndex = 15;
+      this.label3.Text = "Scale:";
+      // 
       // DisplayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(723, 634);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.scaleNumericUpDown);
       this.Controls.Add(this.palette5PictureBox);
       this.Controls.Add(this.palette4PictureBox);
       this.Controls.Add(this.palette3PictureBox);
@@ -213,6 +255,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.palette3PictureBox)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette4PictureBox)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette5PictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.scaleNumericUpDown)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -235,6 +278,8 @@
         private System.Windows.Forms.PictureBox palette3PictureBox;
         private System.Windows.Forms.PictureBox palette4PictureBox;
         private System.Windows.Forms.PictureBox palette5PictureBox;
+        private System.Windows.Forms.NumericUpDown scaleNumericUpDown;
+        private System.Windows.Forms.Label label3;
     }
 }
 
