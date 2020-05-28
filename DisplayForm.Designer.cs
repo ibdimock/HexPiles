@@ -45,6 +45,7 @@
       this.palette5PictureBox = new System.Windows.Forms.PictureBox();
       this.scaleNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.label3 = new System.Windows.Forms.Label();
+      this.palettePickerDialog = new System.Windows.Forms.ColorDialog();
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette0PictureBox)).BeginInit();
@@ -145,6 +146,7 @@
       this.palette0PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette0PictureBox.TabIndex = 8;
       this.palette0PictureBox.TabStop = false;
+      this.palette0PictureBox.Click += new System.EventHandler(this.palette0PictureBox_Click);
       // 
       // palette1PictureBox
       // 
@@ -153,6 +155,7 @@
       this.palette1PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette1PictureBox.TabIndex = 9;
       this.palette1PictureBox.TabStop = false;
+      this.palette1PictureBox.Click += new System.EventHandler(this.palette1PictureBox_Click);
       // 
       // palette2PictureBox
       // 
@@ -161,6 +164,7 @@
       this.palette2PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette2PictureBox.TabIndex = 10;
       this.palette2PictureBox.TabStop = false;
+      this.palette2PictureBox.Click += new System.EventHandler(this.palette2PictureBox_Click);
       // 
       // palette3PictureBox
       // 
@@ -169,6 +173,7 @@
       this.palette3PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette3PictureBox.TabIndex = 11;
       this.palette3PictureBox.TabStop = false;
+      this.palette3PictureBox.Click += new System.EventHandler(this.palette3PictureBox_Click);
       // 
       // palette4PictureBox
       // 
@@ -177,6 +182,7 @@
       this.palette4PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette4PictureBox.TabIndex = 12;
       this.palette4PictureBox.TabStop = false;
+      this.palette4PictureBox.Click += new System.EventHandler(this.palette4PictureBox_Click);
       // 
       // palette5PictureBox
       // 
@@ -185,6 +191,7 @@
       this.palette5PictureBox.Size = new System.Drawing.Size(40, 34);
       this.palette5PictureBox.TabIndex = 13;
       this.palette5PictureBox.TabStop = false;
+      this.palette5PictureBox.Click += new System.EventHandler(this.palette5PictureBox_Click);
       // 
       // scaleNumericUpDown
       // 
@@ -227,7 +234,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(723, 634);
+      this.ClientSize = new System.Drawing.Size(737, 634);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.scaleNumericUpDown);
       this.Controls.Add(this.palette5PictureBox);
@@ -280,6 +287,7 @@
         private System.Windows.Forms.PictureBox palette5PictureBox;
         private System.Windows.Forms.NumericUpDown scaleNumericUpDown;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColorDialog palettePickerDialog;
     }
 }
 

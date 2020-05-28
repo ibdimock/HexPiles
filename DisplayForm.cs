@@ -120,5 +120,71 @@ namespace HexPiles
 
       pictureBox1.Image = B;
     }
+
+        private void palette0PictureBox_Click(object sender, EventArgs e)
+        {
+          if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(0, C);
+        RenderPaletteHex(P, 0, palettePictureBoxes[0]);
+        //Render();
+      }
+        }
+
+    private void palette1PictureBox_Click(object sender, EventArgs e)
+    {
+      if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(1, C);
+        RenderPaletteHex(P, 1, palettePictureBoxes[1]);
+        //Render();
+      }
+    }
+
+    private void palette2PictureBox_Click(object sender, EventArgs e)
+    {
+      if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(2, C);
+        RenderPaletteHex(P, 2, palettePictureBoxes[2]);
+        //Render();
+      }
+    }
+
+    private void palette3PictureBox_Click(object sender, EventArgs e)
+    {
+      if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(3, C);
+        RenderPaletteHex(P, 3, palettePictureBoxes[3]);
+        //Render();
+      }
+    }
+
+    private void palette4PictureBox_Click(object sender, EventArgs e)
+    {
+      if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(4, C);
+        RenderPaletteHex(P, 4, palettePictureBoxes[4]);
+        //Render();
+      }
+    }
+
+    private void palette5PictureBox_Click(object sender, EventArgs e)
+    {
+      if (palettePickerDialog.ShowDialog() == DialogResult.OK)
+      {
+        Color C = palettePickerDialog.Color;
+        P.SetColor(5, C);
+        RenderPaletteHex(P, 5, palettePictureBoxes[5]);
+        //Render();
+      }
+    }
   }
 }
