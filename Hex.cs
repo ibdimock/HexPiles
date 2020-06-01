@@ -47,8 +47,7 @@ namespace HexPiles
     {
       return obj is HexCoordinate coordinate &&
              X == coordinate.X &&
-             Y == coordinate.Y &&
-             Z == coordinate.Z;
+             Y == coordinate.Y;
     }
 
     public override int GetHashCode()
@@ -56,7 +55,6 @@ namespace HexPiles
       var hashCode = -307843816;
       hashCode = hashCode * -1521134295 + X.GetHashCode();
       hashCode = hashCode * -1521134295 + Y.GetHashCode();
-      hashCode = hashCode * -1521134295 + Z.GetHashCode();
       return hashCode;
     }
 

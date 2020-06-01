@@ -46,6 +46,8 @@
       this.scaleNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.label3 = new System.Windows.Forms.Label();
       this.palettePickerDialog = new System.Windows.Forms.ColorDialog();
+      this.timeLabel = new System.Windows.Forms.Label();
+      this.cellsLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.powerNumericUpDown)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.palette0PictureBox)).BeginInit();
@@ -61,7 +63,7 @@
       // 
       this.startButton.Location = new System.Drawing.Point(135, 12);
       this.startButton.Name = "startButton";
-      this.startButton.Size = new System.Drawing.Size(117, 27);
+      this.startButton.Size = new System.Drawing.Size(87, 39);
       this.startButton.TabIndex = 0;
       this.startButton.Text = "Start Simulation";
       this.startButton.UseVisualStyleBackColor = true;
@@ -107,9 +109,9 @@
       // 
       // simulationProgressBar
       // 
-      this.simulationProgressBar.Location = new System.Drawing.Point(135, 51);
+      this.simulationProgressBar.Location = new System.Drawing.Point(228, 12);
       this.simulationProgressBar.Name = "simulationProgressBar";
-      this.simulationProgressBar.Size = new System.Drawing.Size(301, 23);
+      this.simulationProgressBar.Size = new System.Drawing.Size(206, 39);
       this.simulationProgressBar.TabIndex = 4;
       // 
       // pictureBox1
@@ -123,7 +125,7 @@
       // iterationsLabel
       // 
       this.iterationsLabel.AutoSize = true;
-      this.iterationsLabel.Location = new System.Drawing.Point(272, 18);
+      this.iterationsLabel.Location = new System.Drawing.Point(132, 60);
       this.iterationsLabel.Name = "iterationsLabel";
       this.iterationsLabel.Size = new System.Drawing.Size(70, 15);
       this.iterationsLabel.TabIndex = 6;
@@ -230,11 +232,31 @@
       this.label3.TabIndex = 15;
       this.label3.Text = "Scale:";
       // 
+      // timeLabel
+      // 
+      this.timeLabel.AutoSize = true;
+      this.timeLabel.Location = new System.Drawing.Point(362, 60);
+      this.timeLabel.Name = "timeLabel";
+      this.timeLabel.Size = new System.Drawing.Size(71, 15);
+      this.timeLabel.TabIndex = 16;
+      this.timeLabel.Text = "Time: 0.00s";
+      // 
+      // cellsLabel
+      // 
+      this.cellsLabel.AutoSize = true;
+      this.cellsLabel.Location = new System.Drawing.Point(247, 60);
+      this.cellsLabel.Name = "cellsLabel";
+      this.cellsLabel.Size = new System.Drawing.Size(72, 15);
+      this.cellsLabel.TabIndex = 17;
+      this.cellsLabel.Text = "Hex Cells: 0";
+      // 
       // DisplayForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(737, 634);
+      this.Controls.Add(this.cellsLabel);
+      this.Controls.Add(this.timeLabel);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.scaleNumericUpDown);
       this.Controls.Add(this.palette5PictureBox);
@@ -288,6 +310,8 @@
         private System.Windows.Forms.NumericUpDown scaleNumericUpDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColorDialog palettePickerDialog;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label cellsLabel;
     }
 }
 

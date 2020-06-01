@@ -71,14 +71,18 @@ namespace HexPiles
         iterations++;
         CurrentState = NextState;
 
-        int currentProgress = (int)(100 * ((ulong)CurrentState.Count()) / estimatedCellCount);
+        int currentProgress = (int)(100 * Math.Pow((double)CurrentState.Count() / estimatedCellCount, 2));
         if (currentProgress > 100) currentProgress = 100;
-        simulationBackgroundWorker.ReportProgress(currentProgress);
+        simulationBackgroundWorker.ReportProgress(currentProgress, CurrentState.Count);
 
-        NextState = new Dictionary<HexCoordinate, ulong>();
+        NextState = new Dictionary<HexCoordinate, ulong>(CurrentState.Count);
+        //foreach (HexCoordinate hexCoordinate in CurrentState.Keys)
+        //{
+        //  NextState.Add(hexCoordinate, 0);
+        //}
       }
 
-      simulationBackgroundWorker.ReportProgress(100);
+      simulationBackgroundWorker.ReportProgress(100, NextState.Count);
 
       e.Result = NextState;
     }
@@ -87,11 +91,15 @@ namespace HexPiles
     {
       simulationProgressBar.Value = e.ProgressPercentage;
       iterationsLabel.Text = String.Format("Iterations: {0}", iterations);
+      timeLabel.Text = String.Format("Time: {0:0.00}s", (DateTime.Now - SimStart).TotalSeconds);
+      cellsLabel.Text = String.Format("Hex Cells: {0:0}", e.UserState);
     }
 
+    DateTime SimStart;
     private void startButton_Click(object sender, EventArgs e)
     {
       ulong StartingSand = 1UL << ((int)powerNumericUpDown.Value);
+      SimStart = DateTime.Now;
       simulationBackgroundWorker.RunWorkerAsync(StartingSand);
     }
 
